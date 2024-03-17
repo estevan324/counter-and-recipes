@@ -7,7 +7,7 @@ interface CardProps {
 
 export default function Card({ recipe }: CardProps) {
   return (
-    <div className="w-lg rounded overflow-hidden shadow-lg bg-slate-100">
+    <div className="w-lg rounded overflow-hidden shadow-lg bg-slate-100 pt-4">
       <img
         className="rounded-t-lg mx-auto object-cover object-center h-64 w-64"
         src={recipe.link_imagem}
