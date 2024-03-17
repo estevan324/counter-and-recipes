@@ -1,16 +1,36 @@
+"use client";
+
+import React, { useEffect, useState } from "react";
+
 import Recipe from "@/interfaces/Recipe";
 import RecipeProvider from "@/providers/RecipeProvider";
-import React from "react";
 import Card from "./Card";
+import { ClipLoader } from "react-spinners";
 
-async function getData() {
-  const response = await RecipeProvider.loadRecipes();
+export default function PostList() {
+  const [loading, setLoading] = useState<boolean>(false);
+  const [recipes, setRecipes] = React.useState<Recipe[]>([]);
 
-  return response;
-}
+  useEffect(() => {
+    async function loadData() {
+      setLoading(true);
+      const data = await RecipeProvider.loadRecipes().finally(() => {
+        setLoading(false);
+      });
 
-export default async function PostList() {
-  const recipes: Recipe[] = await getData();
+      setRecipes(data);
+    }
+
+    loadData();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="text-center mt-6">
+        <ClipLoader color="#000" size={40} />
+      </div>
+    );
+  }
 
   return (
     <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4">
