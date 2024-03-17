@@ -1,6 +1,6 @@
-import { NavLink } from "@/types/NavLink";
+import NavLink from "@/interfaces/NavLink";
 
 export const NAV_LINKS: NavLink[] = [
   { label: "Contador", href: "/" },
-  { label: "Carrinho de Compras", href: "/cart" },
+  { label: "Receitas", href: "/recipes" },
 ];
