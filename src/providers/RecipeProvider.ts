@@ -1,7 +1,7 @@
 import Recipe from "@/interfaces/Recipe";
 import axios, { AxiosResponse } from "axios";
 
-export default {
+const RecipeProvider = {
   loadRecipes: async () => {
     const res: AxiosResponse<Recipe[]> = await axios.get(
       `${process.env.HOST}/api/recipes`
@@ -10,3 +10,5 @@ export default {
     return res.data;
   },
 };
+
+export default RecipeProvider;

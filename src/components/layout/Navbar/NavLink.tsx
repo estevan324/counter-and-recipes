@@ -1,8 +1,8 @@
 import React from "react";
-import NavLink from "@/interfaces/NavLink";
+import type NavLinkType from "@/interfaces/NavLink";
 import Link from "next/link";
 
-export default function NavLink({ label, href }: NavLink) {
+export default function NavLink({ label, href }: NavLinkType) {
   return (
     <li>
       <Link
