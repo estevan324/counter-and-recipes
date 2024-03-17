@@ -1,7 +1,7 @@
 import Recipe from "@/interfaces/Recipe";
 import RecipeProvider from "@/providers/RecipeProvider";
 import React from "react";
-import Card from "../card";
+import Card from "./Card";
 
 async function getData() {
   const response = await RecipeProvider.loadRecipes();
