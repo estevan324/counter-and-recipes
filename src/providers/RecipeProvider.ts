@@ -4,7 +4,7 @@ import axios, { AxiosResponse } from "axios";
 const RecipeProvider = {
   loadRecipes: async () => {
     const res: AxiosResponse<Recipe[]> = await axios.get(
-      `${process.env.HOST}/api/recipes`
+      `${process.env.NEXT_PUBLIC_HOST}/api/recipes`
     );
 
     return res.data;
