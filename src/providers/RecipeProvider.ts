@@ -3,9 +3,7 @@ import axios, { AxiosResponse } from "axios";
 
 const RecipeProvider = {
   loadRecipes: async () => {
-    const res: AxiosResponse<Recipe[]> = await axios.get(
-      `${process.env.NEXT_PUBLIC_HOST}/api/recipes`
-    );
+    const res: AxiosResponse<Recipe[]> = await axios.get("/api/recipes");
 
     return res.data;
   },
